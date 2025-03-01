@@ -1,0 +1,17 @@
+.text {
+    text-align: center;
+    background-color: red;
+}
+
+.title {
+    color: aquamarine;
+}
+
+.subtitle {
+    color: rgb(127, 255, 127);
+}
+
+p {
+    color: rgb(0, 255, 13);
+    font-size: larger;
+}
