@@ -51,7 +51,7 @@ else {
     // generazione random del numero del computer
     let num1 = Math.round(Math.random() * 5) + 1;
     console.log("numero generato dal computer", num1) // è uguale all'altro algoritmo, non so perchè questo funziona e stampa in console, mentre l'altro non stampava.
-    cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1.value
+    cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1
 
     // somma dei due numeri
     let sum = parseInt(userNumber.value) + num1; { // prima avevo messo userNumber + num1 tra parentesi, rimane il dubbio su quando ci vogliono le parentesi e quando no
