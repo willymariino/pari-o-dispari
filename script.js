@@ -23,7 +23,7 @@ sendTask.addEventListener('click', function () {
 
     if (!validNumber) {
         console.log("numero non valido, ricarica la pagina e scegline un altro")
-        userNumberResult.innertext = "numero non valido, ricarica la pagina e scegline un altro"
+        userNumberResult.innerText = "numero non valido, ricarica la pagina e scegline un altro"
     }
 
     else {
@@ -35,7 +35,7 @@ sendTask.addEventListener('click', function () {
         // input dell'utente se il risultato sarà pari o dispari
         const userGuess = ('inserisci la parola "pari" oppure "dispari" ');
         console.log("l'utente ha scelto - ", userGuess)
-        userGuessResult.innertext = "l'utente ha scelto" + userGuess.value
+        userGuessResult.innerText = "l'utente ha scelto" + userGuess.value
 
     }
 
@@ -43,7 +43,7 @@ sendTask.addEventListener('click', function () {
 
 if (userGuess !== "pari" && userGuess !== "dispari") {
     console.log("input non valido. ricarica la pagina e scegline un altro")
-    userGuessResult.innertext = "input non valido. ricarica la pagina e scegline un altro"
+    userGuessResult.innerText = "input non valido. ricarica la pagina e scegline un altro"
 }
 
 else {
@@ -51,7 +51,7 @@ else {
     // generazione random del numero del computer
     let num1 = Math.round(Math.random() * 5) + 1;
     console.log("numero generato dal computer", num1) // è uguale all'altro algoritmo, non so perchè questo funziona e stampa in console, mentre l'altro non stampava.
-    cpuNumberResult.innertext = "numero generato dal computer:" + " " + num1.value
+    cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1.value
 
     // somma dei due numeri
     let sum = userNumber + num1; { // prima avevo messo userNumber + num1 tra parentesi, rimane il dubbio su quando ci vogliono le parentesi e quando no
@@ -77,7 +77,7 @@ else {
     }
     else {
         console.log("ha vinto il computer");
-        winnerResult.innertext = "ha vinto il computer"
+        winnerResult.innerText = "ha vinto il computer"
     }
 
 }
