@@ -54,7 +54,7 @@ else {
     cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1.value
 
     // somma dei due numeri
-    let sum = userNumber + num1; { // prima avevo messo userNumber + num1 tra parentesi, rimane il dubbio su quando ci vogliono le parentesi e quando no
+    let sum = parseInt(userNumber.value) + num1; { // prima avevo messo userNumber + num1 tra parentesi, rimane il dubbio su quando ci vogliono le parentesi e quando no
         console.log(sum)
         sumNumberResult.innerText = "la somma dei due numeri è:" + " " + sum.value
     }
