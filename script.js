@@ -13,7 +13,7 @@ const winnerResult = document.getElementById("winner-result")
 sendTask.addEventListener('click', function () {
 
     // convertire l'input dell'utente in numero
-    const number = parseint(userNumber.value)
+    const number = parseInt(userNumber.value)
     const guess = (userGuess.value)
 
     const finalWinner = calculateWinner(number, guess)
