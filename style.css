@@ -1,3 +1,10 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main {
     text-align: center;
     background-color: red;
@@ -30,4 +37,10 @@ p {
     margin: 10px;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.answer-box {
+    background-color: aliceblue;
+    max-width: 600px;
+    margin: 30px auto;
 }
