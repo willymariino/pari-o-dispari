@@ -11,15 +11,15 @@ main {
 }
 
 .title {
-    color: aquamarine;
+    color: aquamarine
 }
 
 .subtitle {
     color: rgb(127, 255, 127);
 }
 
-p {
-    color: rgb(0, 255, 13);
+.instructions {
+    color: rgb(12, 255, 212);
     font-size: larger;
 }
 
@@ -43,4 +43,17 @@ p {
     background-color: aliceblue;
     max-width: 600px;
     margin: 30px auto;
+    color: black;
+
+}
+
+#send-task {
+    margin: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 35px;
+    background-color: #3551f1;
+    border: none;
+    transition: all 0.8s;
+    color: aliceblue;
 }

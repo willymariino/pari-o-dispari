@@ -1,4 +1,4 @@
-// input numero dell'utente
+// selezionare gli elementi della pagina
 const userNumber = document.getElementById("new-task-number")
 const userGuess = document.getElementById("new-task-even-or-odd")
 const sendTask = document.getElementById("send-task")
@@ -8,10 +8,9 @@ const cpuNumberResult = document.getElementById("cpu-number-result")
 const sumNumberResult = document.getElementById("sum-number-result")
 const gameResult = document.getElementById("game-result")
 const winnerResult = document.getElementById("winner-result")
-// validazione dell'input dell'utente per il numero inserito
+
 
 // funzione per generare un numero casuale da 1 a 5
-
 function generateRandomNumber() {
     return Math.floor(Math.random() * 5) + 1
 }
@@ -26,77 +25,58 @@ function verifyIfEvenOrOdd(numero) {
     }
 }
 
+// evento al click del bottone
 sendTask.addEventListener('click', function () {
 
-    // convertire l'input dell'utente in numero
+    // convertire l'input dell'utente in valori utilizzabili
     const number = parseInt(userNumber.value)
-    const guess = (userGuess.value)
+    const guess = userGuess.value.toLowerCase().trim() // convertiamo in  minuscolo ed eliminiamo gli spazi
 
-    const finalWinner = calculateWinner(number, guess)
+    // const validNumber = !isNaN(userNumber) && userNumber >= 1 && userNumber <= 5; codice che non uso più
 
-
-    const validNumber = !isNaN(userNumber) && userNumber >= 1 && userNumber <= 5;
-
-    if (!validNumber) {
+    // validazione input numero
+    if (isNaN(number) || number < 1 || number > 5) {
         console.log("numero non valido, ricarica la pagina e scegline un altro")
         userNumberResult.innerText = "numero non valido, ricarica la pagina e scegline un altro"
+        return
     }
 
+    // validazione input pari/dispari
+    if (guess !== "pari" && guess !== "dispari") {
+        userGuessResult.innerText = "Scelta non valida, inserisci 'pari' o 'dispari' "
+        return
+    }
+
+    // invoco la funzione per generare un numero casuale
+    const num1 = generateRandomNumber()
+
+    // sommo i due numeri
+    const sum = number + num1
+
+    // invoco la funzione per controllare se sum è pari o dispari
+    const result = verifyIfEvenOrOdd(sum)
+
+    // stampo in pagina i risultati
+    userNumberResult.innerText = "l'utente ha scelto il numero:" + " " + number
+    userGuessResult.innerText = "l'utente ha scelto:" + " " + guess
+    cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1
+    sumNumberResult.innerText = "la somma dei due numeri è:" + " " + sum
+    gameResult.innerText = "risultato:" + " " + result
+
+
+
+
+    // confronto tra la scelta dell'utente e il risultato della somma
+    if (guess === result) {
+        console.log("ha vinto l'utente");
+        winnerResult.innerText = "ha vinto l'utente"
+    }
     else {
-        console.log("l'utente ha scelto", userNumber)
-        userNumberResult.innerText = "l'utente ha scelto:" + userNumber.value
-
-
-
-        // input dell'utente se il risultato sarà pari o dispari
-        const userGuess = ('inserisci la parola "pari" oppure "dispari" ');
-        console.log("l'utente ha scelto - ", userGuess)
-        userGuessResult.innerText = "l'utente ha scelto" + userGuess.value
-
+        console.log("ha vinto il computer");
+        winnerResult.innerText = "ha vinto il computer"
     }
 
 
-
-    if (userGuess !== "pari" && userGuess !== "dispari") {
-        console.log("input non valido. ricarica la pagina e scegline un altro")
-        userGuessResult.innerText = "input non valido. ricarica la pagina e scegline un altro"
-    }
-
-    else {
-
-        // generazione random del numero del computer
-        let num1 = Math.round(Math.random() * 5) + 1;
-        console.log("numero generato dal computer", num1) // è uguale all'altro algoritmo, non so perchè questo funziona e stampa in console, mentre l'altro non stampava.
-        cpuNumberResult.innerText = "numero generato dal computer:" + " " + num1
-
-        // somma dei due numeri
-        let sum = parseInt(userNumber.value) + num1; { // prima avevo messo userNumber + num1 tra parentesi, rimane il dubbio su quando ci vogliono le parentesi e quando no
-            console.log(sum)
-            sumNumberResult.innerText = "la somma dei due numeri è:" + " " + sum.value
-        }
-
-        // calcolo se il risultato è pari o dispari
-        let result;
-        if (sum % 2 === 0) {
-            result = "pari";
-        }
-        else {
-            result = "dispari";
-        }
-        console.log("risultato", result);
-        gameResult.innertext = "risultato" + " " + result.value
-
-        // confronto tra la scelta dell'utente e il risultato della somma
-        if (userGuess === result) {
-            console.log("ha vinto l'utente");
-            winnerResult.innerText = "ha vinto l'utente"
-        }
-        else {
-            console.log("ha vinto il computer");
-            winnerResult.innerText = "ha vinto il computer"
-        }
-
-    }
 
 })
 
