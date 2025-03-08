@@ -1,23 +1,32 @@
 // input numero dell'utente
-const userNumber = parseInt(prompt('inserisci un numero da 1 a 5'));
-
+const userNumber = document.getElementById("new-task-number")
+const userGuess = document.getElementById("new-task-even-or-odd")
+const sendTask = document.getElementById("send-task")
+const userNumberResult = document.getElementById("user-number-result")
+const userGuessResult = document.getElementById("user-guess-result")
+const gameResult = document.getElementById("game-result")
 // validazione dell'input dell'utente per il numero inserito
+
 const validNumber = !isNaN(userNumber) && userNumber >= 1 && userNumber <= 5;
 
 if (!validNumber) {
-    console.log("numero non valido. ricarica la pagina e scegline un altro")
+    console.log("numero non valido, ricarica la pagina e scegline un altro")
+    userNumberResult.innertext = "numero non valido, ricarica la pagina e scegline un altro"
 }
 
 else {
     console.log("l'utente ha scelto", userNumber)
+    userNumberResult.innerText = "l'utente ha scelto:" + userNumber
+
 
 
     // input dell'utente se il risultato sarà pari o dispari
-    const userGuess = (prompt('inserisci la parola "pari" oppure "dispari" '));
+    const userGuess = ('inserisci la parola "pari" oppure "dispari" ');
     console.log("l'utente ha scelto - ", userGuess)
+    gameResult.innertext = userGuess.value + " "
 
     if (userGuess !== "pari" && userGuess !== "dispari") {
-        console.log("numero non valido. ricarica la pagina e scegline un altro")
+        console.log("input non valido. ricarica la pagina e scegline un altro")
     }
 
     else {

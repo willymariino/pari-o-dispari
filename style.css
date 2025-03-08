@@ -1,4 +1,4 @@
-.text {
+main {
     text-align: center;
     background-color: red;
 }
@@ -14,4 +14,20 @@
 p {
     color: rgb(0, 255, 13);
     font-size: larger;
+}
+
+.text-box {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-box {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }

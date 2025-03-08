@@ -10,18 +10,45 @@
 
 <body>
 
-    <div class="text">
+    <main>
 
         <h1 class="title">gioco pari o dispari</h1>
 
         <h2 class="subtitle"> come giocare</h2>
 
-        <p>fare clic destro co mouse, andare su "esamina" e una volta aperto l'inspector, andare sulla casella
-            sotto
-            "console" e ricaricare la pagina
+        <p>
+            inserire un numero da 1 a 5 nella casella di input, mentre il computer genererà casualmente un altro numero,
+            e l'utente dovrà indovinare se se la somma dei due numeri sarà pari oppure dispari.
+
         </p>
 
-    </div>
+        <form action="">
+            <div class="container">
+
+                <div id="label-box">
+                    <label for="new-task-number"> inserisci numero da 1 a 5</label>
+                    <label for="new-task-even-or-odd">inserisci pari o dispari</label>
+                </div>
+
+                <div id="input-box">
+                    <input type="text" id="new-task-number" placeholder="inserisci numero">
+                    <input type="text" id="new-task-even-or-odd" placeholder="inserisci pari o dispari">
+                </div>
+
+            </div>
+
+        </form>
+
+        <button id="send-task"> </button>
+
+        <p id="user-number-result"> </p>
+        <p id="user-guess-result"> </p>
+        <p id="game-result"> </p>
+
+
+
+
+    </main>
     <script src="script.js"></script>
 </body>
 
