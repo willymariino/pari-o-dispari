@@ -12,7 +12,7 @@ const winnerResult = document.getElementById("winner-result")
 
 // funzione per generare un numero casuale da 1 a 5
 function generateRandomNumber() {
-    return Math.floor(Math.random() * 5) + 1
+    return Math.floor(Math.random() * 100) + 1
 }
 
 // funzione per verificare se il numero è pari o dispari
@@ -35,7 +35,7 @@ sendTask.addEventListener('click', function () {
     // const validNumber = !isNaN(userNumber) && userNumber >= 1 && userNumber <= 5; codice che non uso più
 
     // validazione input numero
-    if (isNaN(number) || number < 1 || number > 5) {
+    if (isNaN(number) || number < 1 || number > 100) {
         console.log("numero non valido, ricarica la pagina e scegline un altro")
         userNumberResult.innerText = "numero non valido, ricarica la pagina e scegline un altro"
         return
