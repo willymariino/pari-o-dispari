@@ -27,10 +27,10 @@ This project is a simple web-based "Even or Odd" game. It was originally develop
 
 ## Tech Stack
 
-**HTML5** – Markup structure  
-**CSS3** – Basic layout and styling  
-**JavaScript** – Logic, interactivity, and DOM manipulation  
-**Netlify** – Deployment of the live demo  
+- **HTML5** – Markup structure  
+- **CSS3** – Basic layout and styling  
+- **JavaScript** – Logic, interactivity, and DOM manipulation  
+- **Netlify** – Deployment of the live demo  
 
 ## Live Demo
 Try the game here: [Even or Odd](https://pari-o-dispari.netlify.app/)
